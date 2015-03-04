@@ -1,0 +1,20 @@
+Thanks for all this awesome pics guys!
+
+media/imgs/containers.jpg
+  Author: https://www.flickr.com/photos/tsuna72/ 
+  Original: https://flic.kr/p/a3NYdi
+  License: https://creativecommons.org/licenses/by/2.0/
+
+media/imgs/also-a-matrix-from-hell.png
+media/imgs/cargo-transport-pre-1960.png
+media/imgs/containers.jpg
+media/imgs/docker.png
+media/imgs/eliminates-matrix-from-hell.png
+media/imgs/intermodal-shipping-container.png
+media/imgs/openshine.png
+media/imgs/shipping-container-for-code.png
+media/imgs/the-challenge.png
+media/imgs/the-matrix-from-hell.png
+   Original: http://www.slideshare.net/dotCloud
+   Thanks: Docker Inc.
+
