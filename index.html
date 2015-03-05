@@ -1,292 +1,292 @@
 <!doctype html>
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>Docker - La revolución de los contenedores</title>
+    <title>Docker - La revolución de los contenedores</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/docker.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/docker.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-	<body>
+  <body>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					
-					<div>
-						<img src="media/imgs/docker.png" style="width: 432px; height: 376px; max-height: none; max-width: none;"/>
-						<br/>
-					</div>
-					<h3>La revolución de los contenedores</h3>
-					<p>
-						<small style="margin-top: 40px; font-size: 0.7em; font-weight: bold;"><a href="https://github.com/telemaco">roberto.majadas</a></small>
-						<a href="http://www.openshine.com"><img src="media/imgs/openshine.png"/></a>
-					</p>
-				</section>
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          
+          <div>
+            <img src="media/imgs/docker.png" style="width: 432px; height: 376px; max-height: none; max-width: none;"/>
+            <br/>
+          </div>
+          <h3>La revolución de los contenedores</h3>
+          <p>
+            <small style="margin-top: 40px; font-size: 0.7em; font-weight: bold;"><a href="https://github.com/telemaco">roberto.majadas</a></small>
+            <a href="http://www.openshine.com"><img src="media/imgs/openshine.png"/></a>
+          </p>
+        </section>
 
-				<section>
-					<h1>¿Qué es docker?</h1>
-					<h2 class="fragment" data-fragment-index="0">Es un proyecto de <u>software libre</u> que automatiza el despliegue de <u>aplicaciones</u> dentro de <u>contenedores de software</u></h2>
-				</section>
+        <section>
+          <h1>¿Qué es docker?</h1>
+          <h2 class="fragment" data-fragment-index="0">Es un proyecto de <u>software libre</u> que automatiza el despliegue de <u>aplicaciones</u> dentro de <u>contenedores de software</u></h2>
+        </section>
 
-				<section data-background="media/imgs/containers.jpg">
-					<h1>¿Qué es un contenedor?</h1>
-				</section>
+        <section data-background="media/imgs/containers.jpg">
+          <h1>¿Qué es un contenedor?</h1>
+        </section>
 
-				<section>
-					<h1>Breve historia de la "virtualización"</h1>
-					<h3 class="fragment" data-fragment-index="0">(muy muy muy simplificada)</h3>
-					<div style="position: absolute; left: 10%; top: 150px; width: 90%;" class="absolute-element">
-						<ul style="text-align: left; line-height=1.1em;">
-							<li class="fragment" data-fragment-index="1">El comando chroot</li>
-							<li class="fragment" data-fragment-index="2">Virtualización con qemu, vmware, virtualbox, Xen, KVM</li>
-							<li class="fragment" data-fragment-index="3">Clouds everywhere</li>
-							<li class="fragment" data-fragment-index="4">Containerización</li>
-						</ul>
-					</div>
-				</section>
+        <section>
+          <h1>Breve historia de la "virtualización"</h1>
+          <h3 class="fragment" data-fragment-index="0">(muy muy muy simplificada)</h3>
+          <div style="position: absolute; left: 10%; top: 150px; width: 90%;" class="absolute-element">
+            <ul style="text-align: left; line-height=1.1em;">
+              <li class="fragment" data-fragment-index="1">El comando chroot</li>
+              <li class="fragment" data-fragment-index="2">Virtualización con qemu, vmware, virtualbox, Xen, KVM</li>
+              <li class="fragment" data-fragment-index="3">Clouds everywhere</li>
+              <li class="fragment" data-fragment-index="4">Containerización</li>
+            </ul>
+          </div>
+        </section>
 
-				<section data-background="media/imgs/containers.jpg">
-					<h1>Volvamos a los contenedores...</h1>
-				</section>
+        <section data-background="media/imgs/containers.jpg">
+          <h1>Volvamos a los contenedores...</h1>
+        </section>
 
-				<section>
-					<h1>La problematica actual...</h1>
-					<p>
-						<img src="media/imgs/the-challenge.png">
-					</p>
-				</section>
+        <section>
+          <h1>La problematica actual...</h1>
+          <p>
+            <img src="media/imgs/the-challenge.png">
+          </p>
+        </section>
 
-				<section>
-					<h1>Un poco infierno ¿verdad?</h1>
-					<p>
-						<img src="media/imgs/the-matrix-from-hell.png">
-					</p>
-				</section>
+        <section>
+          <h1>Un poco infierno ¿verdad?</h1>
+          <p>
+            <img src="media/imgs/the-matrix-from-hell.png">
+          </p>
+        </section>
 
-				<section>
-					<h1>Transporte de carga pre-1960</h1>
-					<p>
-						<img src="media/imgs/cargo-transport-pre-1960.png">
-					</p>
-				</section>
+        <section>
+          <h1>Transporte de carga pre-1960</h1>
+          <p>
+            <img src="media/imgs/cargo-transport-pre-1960.png">
+          </p>
+        </section>
 
-				<section>
-					<h1>Un poco infierno también ¿verdad?</h1>
-					<p>
-						<img src="media/imgs/also-a-matrix-from-hell.png">
-					</p>
-				</section>
+        <section>
+          <h1>Un poco infierno también ¿verdad?</h1>
+          <p>
+            <img src="media/imgs/also-a-matrix-from-hell.png">
+          </p>
+        </section>
 
-				<section>
-					<h1>Solución...</h1>
-					<p>
-						<img src="media/imgs/intermodal-shipping-container.png">
-					</p>
-				</section>
+        <section>
+          <h1>Solución...</h1>
+          <p>
+            <img src="media/imgs/intermodal-shipping-container.png">
+          </p>
+        </section>
 
-				<section>
-					<h1>Docker es un sistema de contenedores para software</h1>
-					<p>
-						<img src="media/imgs/shipping-container-for-code.png">
-					</p>
-				</section>
+        <section>
+          <h1>Docker es un sistema de contenedores para software</h1>
+          <p>
+            <img src="media/imgs/shipping-container-for-code.png">
+          </p>
+        </section>
 
-				<section>
-					<h1>Mucho mejor ¿no?</h1>
-					<p>
-						<img src="media/imgs/eliminates-matrix-from-hell.png">
-					</p>
-				</section>
+        <section>
+          <h1>Mucho mejor ¿no?</h1>
+          <p>
+            <img src="media/imgs/eliminates-matrix-from-hell.png">
+          </p>
+        </section>
 
-				<section>
-					<h1>Que significa para un...</h1>
-					<div style="position: absolute; left: 1%; top: 100px; width: 48%;" class="absolute-element">
-						<ul style="text-align: left; line-height=1.1em;">
-							<li class="fragment" data-fragment-index="0"><b>Developer</b></li>
-							<ul style="font-size: 24px;" class="fragment" data-fragment-index="0">
-								<li>Entorno limpio y portable de desarrollo</li>
-								<li>Todos con el mismo entorno de desarrollo</li>
-								<li>Entorno aislado</li>
-								<li>Despliegues rápidos</li>
-							</ul>
-							<li class="fragment" data-fragment-index="1"><b>Devops</b></li>
-							<ul style="font-size: 24px;" class="fragment" data-fragment-index="1">
-								<li>Ciclos mas limpios, consistentes y repetibles</li>
-								<li>Sin inconsistencias</li>
-								<li>Facilita la integración continua</li>
-							</ul>
-						</ul>
-					</div>
-					<div style="position: absolute; left: 52%; top: 100px; width: 48%;" class="absolute-element">
-						<ul style="text-align: left; line-height=1.1em;">
-							<li class="fragment" data-fragment-index="2"><b>Testing QA</b></li>
-							<ul style="font-size: 24px;" class="fragment" data-fragment-index="2">
-								<li>No hay que preparar entornos especiales sino desplegar contenedores</li>
-								<li>Se prueba lo mismo que el desarrollador entregó</li>
-							</ul>
-							<li class="fragment" data-fragment-index="3"><b>Clientes</b></li>
-							<ul style="font-size: 24px;" class="fragment" data-fragment-index="3">
-								<li>Rapidos despliegues en cliente</li>
-								<li>Facilita la aprobación de hitos</li>
-							</ul>
-						</ul>
-					</div>
-				</section>
+        <section>
+          <h1>Que significa para un...</h1>
+          <div style="position: absolute; left: 1%; top: 100px; width: 48%;" class="absolute-element">
+            <ul style="text-align: left; line-height=1.1em;">
+              <li class="fragment" data-fragment-index="0"><b>Developer</b></li>
+              <ul style="font-size: 24px;" class="fragment" data-fragment-index="0">
+                <li>Entorno limpio y portable de desarrollo</li>
+                <li>Todos con el mismo entorno de desarrollo</li>
+                <li>Entorno aislado</li>
+                <li>Despliegues rápidos</li>
+              </ul>
+              <li class="fragment" data-fragment-index="1"><b>Devops</b></li>
+              <ul style="font-size: 24px;" class="fragment" data-fragment-index="1">
+                <li>Ciclos mas limpios, consistentes y repetibles</li>
+                <li>Sin inconsistencias</li>
+                <li>Facilita la integración continua</li>
+              </ul>
+            </ul>
+          </div>
+          <div style="position: absolute; left: 52%; top: 100px; width: 48%;" class="absolute-element">
+            <ul style="text-align: left; line-height=1.1em;">
+              <li class="fragment" data-fragment-index="2"><b>Testing QA</b></li>
+              <ul style="font-size: 24px;" class="fragment" data-fragment-index="2">
+                <li>No hay que preparar entornos especiales sino desplegar contenedores</li>
+                <li>Se prueba lo mismo que el desarrollador entregó</li>
+              </ul>
+              <li class="fragment" data-fragment-index="3"><b>Clientes</b></li>
+              <ul style="font-size: 24px;" class="fragment" data-fragment-index="3">
+                <li>Rapidos despliegues en cliente</li>
+                <li>Facilita la aprobación de hitos</li>
+              </ul>
+            </ul>
+          </div>
+        </section>
 
-				<section>
-					<h1>Detalles técnicos...</h1>
-					<div style="position: absolute; left: 1%; top: 100px; width: 48%;" class="absolute-element">
-						<ul style="text-align: left; line-height=1.1em;">
-							<li class="fragment" data-fragment-index="0"><b>En cualquier sitio</b></li>
-							<ul style="font-size: 24px;" class="fragment" data-fragment-index="0">
-								<li>No importa la versión de kernel</li>
-								<li>No importa la distro</li>
-								<li>No importa donde esté el host</li>
-								<li>Las arquitecturas deben coincidir</li>
-							</ul>
-							<li class="fragment" data-fragment-index="1"><b>Cualquier app</b></li>
-							<ul style="font-size: 24px;" class="fragment" data-fragment-index="1">
-								<li>Si corre en Linux, corre en el container</li>
-							</ul>
-						</ul>
-					</div>
-					<div style="position: absolute; left: 52%; top: 100px; width: 48%;" class="absolute-element">
-						<ul style="text-align: left; line-height=1.1em;">
-							<li class="fragment" data-fragment-index="2"><b>VM ligera</b></li>
-							<ul style="font-size: 24px;" class="fragment" data-fragment-index="2">
-								<li>Espacio de procesos propio</li>
-								<li>Interfaces de red propias</li>
-							</ul>
-							<li class="fragment" data-fragment-index="3"><b>Chroot con estorides</b></li>
-							<ul style="font-size: 24px;" class="fragment" data-fragment-index="3">
-								<li>No necesita un /sbin/init</li>
-								<li>Entorno aislado</li>
-								<li>Comparte kernel con el Host</li>
-							</ul>
-						</ul>
-					</div>
-				</section>
+        <section>
+          <h1>Detalles técnicos...</h1>
+          <div style="position: absolute; left: 1%; top: 100px; width: 48%;" class="absolute-element">
+            <ul style="text-align: left; line-height=1.1em;">
+              <li class="fragment" data-fragment-index="0"><b>En cualquier sitio</b></li>
+              <ul style="font-size: 24px;" class="fragment" data-fragment-index="0">
+                <li>No importa la versión de kernel</li>
+                <li>No importa la distro</li>
+                <li>No importa donde esté el host</li>
+                <li>Las arquitecturas deben coincidir</li>
+              </ul>
+              <li class="fragment" data-fragment-index="1"><b>Cualquier app</b></li>
+              <ul style="font-size: 24px;" class="fragment" data-fragment-index="1">
+                <li>Si corre en Linux, corre en el container</li>
+              </ul>
+            </ul>
+          </div>
+          <div style="position: absolute; left: 52%; top: 100px; width: 48%;" class="absolute-element">
+            <ul style="text-align: left; line-height=1.1em;">
+              <li class="fragment" data-fragment-index="2"><b>VM ligera</b></li>
+              <ul style="font-size: 24px;" class="fragment" data-fragment-index="2">
+                <li>Espacio de procesos propio</li>
+                <li>Interfaces de red propias</li>
+              </ul>
+              <li class="fragment" data-fragment-index="3"><b>Chroot con estorides</b></li>
+              <ul style="font-size: 24px;" class="fragment" data-fragment-index="3">
+                <li>No necesita un /sbin/init</li>
+                <li>Entorno aislado</li>
+                <li>Comparte kernel con el Host</li>
+              </ul>
+            </ul>
+          </div>
+        </section>
 
-				<section>
-					<h1>VMs vs Contenedores</h1>
-					<p>
-						<img src="media/imgs/containers-vs-vms.png">
-					</p>
-				</section>
+        <section>
+          <h1>VMs vs Contenedores</h1>
+          <p>
+            <img src="media/imgs/containers-vs-vms.png">
+          </p>
+        </section>
 
-				<section>
-					<h1>Talk nerdy to me...</h1>
-					<p>
-						<img src="media/imgs/lion-cat.gif">
-					</p>
-				</section>
+        <section>
+          <h1>Talk nerdy to me...</h1>
+          <p>
+            <img src="media/imgs/lion-cat.gif">
+          </p>
+        </section>
 
-				<section>
-					<h1>Instalación de docker</h1>
-					<div style="position: absolute; left: 1%; top: 100px; width: 48%;" class="absolute-element">
-						<ul style="text-align: left; line-height=1.1em;">
-							<li class="fragment" data-fragment-index="0"><b>GNU/Linux</b></li>
-							<ul style="font-size: 24px;" class="fragment" data-fragment-index="0">
-								<li>
-									<a href="https://docs.docker.com/installation/debian/">Debian</a>, <a href="https://docs.docker.com/installation/ubuntulinux/">Ubuntu</a>, <a href="https://docs.docker.com/installation/fedora/">Fedora</a>, <a href="https://docs.docker.com/installation/SUSE/">SUSE</a>, <a href="https://docs.docker.com/installation/archlinux/">ArchLinux</a> y <a href="https://docs.docker.com/installation/">demás</a>...
-								</li>
-								<li>Requiere un kernel > 3.13 </li>
-							</ul>
-						</ul>
-					</div>
-					<div style="position: absolute; left: 52%; top: 100px; width: 48%;" class="absolute-element">
-						<ul style="text-align: left; line-height=1.1em;">
-							<li class="fragment" data-fragment-index="1"><b>Windows y MacOSX</b></li>
-							<ul style="font-size: 24px;" class="fragment" data-fragment-index="1">
-								<li>No funciona nativamente</li>
-								<li><a href="http://boot2docker.io/">Boot2docker</a></li>
-							</ul>
-						</ul>
-					</div>
-				</section>
+        <section>
+          <h1>Instalación de docker</h1>
+          <div style="position: absolute; left: 1%; top: 100px; width: 48%;" class="absolute-element">
+            <ul style="text-align: left; line-height=1.1em;">
+              <li class="fragment" data-fragment-index="0"><b>GNU/Linux</b></li>
+              <ul style="font-size: 24px;" class="fragment" data-fragment-index="0">
+                <li>
+                  <a href="https://docs.docker.com/installation/debian/">Debian</a>, <a href="https://docs.docker.com/installation/ubuntulinux/">Ubuntu</a>, <a href="https://docs.docker.com/installation/fedora/">Fedora</a>, <a href="https://docs.docker.com/installation/SUSE/">SUSE</a>, <a href="https://docs.docker.com/installation/archlinux/">ArchLinux</a> y <a href="https://docs.docker.com/installation/">demás</a>...
+                </li>
+                <li>Requiere un kernel > 3.13 </li>
+              </ul>
+            </ul>
+          </div>
+          <div style="position: absolute; left: 52%; top: 100px; width: 48%;" class="absolute-element">
+            <ul style="text-align: left; line-height=1.1em;">
+              <li class="fragment" data-fragment-index="1"><b>Windows y MacOSX</b></li>
+              <ul style="font-size: 24px;" class="fragment" data-fragment-index="1">
+                <li>No funciona nativamente</li>
+                <li><a href="http://boot2docker.io/">Boot2docker</a></li>
+              </ul>
+            </ul>
+          </div>
+        </section>
 
-				<section>
-					<h1>Imágenes, capas y containers</h1>
-					<p>
-						<img src="media/imgs/docker-filesystems-multilayer.png">
-					</p>	
-				</section>
+        <section>
+          <h1>Imágenes, capas y containers</h1>
+          <p>
+            <img src="media/imgs/docker-filesystems-multilayer.png">
+          </p>  
+        </section>
 
-				<section>
-					<h1>Una vez instalado tenemos...</h1>
-					<div class="fragment" data-fragment-index="0" style="position: absolute; left: 1%; top: 100px; width: 48%;" class="absolute-element">
-						<ul style="text-align: left; line-height=1.1em;">
-							<li><b>Docker daemon</b></li>
-							<ul style="font-size: 24px;">
-								<li>Es un servicio del sistema</li>
-								<li>Controla del ciclo de vida de los contenedores</li>
-							</ul>
-						</ul>
-					</div>
-					<div class="fragment" data-fragment-index="1" style="position: absolute; left: 52%; top: 100px; width: 48%;" class="absolute-element">
-						<ul style="text-align: left; line-height=1.1em;">
-							<li ><b>Docker CLI</b></li>
-							<ul style="font-size: 24px;">
-								<li>Herramienta de usuario</li>
-								<li>Creación, destrucción, publicación y descarga de imagenes</li>
-								<li>Gestión de contenedores</li>
-							</ul>
-						</ul>
-					</div>
-				</section>
+        <section>
+          <h1>Una vez instalado tenemos...</h1>
+          <div class="fragment" data-fragment-index="0" style="position: absolute; left: 1%; top: 100px; width: 48%;" class="absolute-element">
+            <ul style="text-align: left; line-height=1.1em;">
+              <li><b>Docker daemon</b></li>
+              <ul style="font-size: 24px;">
+                <li>Es un servicio del sistema</li>
+                <li>Controla del ciclo de vida de los contenedores</li>
+              </ul>
+            </ul>
+          </div>
+          <div class="fragment" data-fragment-index="1" style="position: absolute; left: 52%; top: 100px; width: 48%;" class="absolute-element">
+            <ul style="text-align: left; line-height=1.1em;">
+              <li ><b>Docker CLI</b></li>
+              <ul style="font-size: 24px;">
+                <li>Herramienta de usuario</li>
+                <li>Creación, destrucción, publicación y descarga de imagenes</li>
+                <li>Gestión de contenedores</li>
+              </ul>
+            </ul>
+          </div>
+        </section>
 
-				<section>
-					<h1>Docker registry</h1>
-					<div style="position: absolute; left: 10%; top: 100px; width: 90%;" class="absolute-element">
-						<ul style="text-align: left; line-height=1.1em;">
-							<li class="fragment" data-fragment-index="0">Sirve de repositorio de imágenes</li>
-							<li class="fragment" data-fragment-index="1">Registry oficial: <a href="https://registry.hub.docker.com/">registry.hub.docker.com</a></li>
-							<li class="fragment" data-fragment-index="2"><a href="https://registry.hub.docker.com/_/registry/">Docker</a> del docker registry</li>
-						</ul>
-					</div>
-				</section>
+        <section>
+          <h1>Docker registry</h1>
+          <div style="position: absolute; left: 10%; top: 100px; width: 90%;" class="absolute-element">
+            <ul style="text-align: left; line-height=1.1em;">
+              <li class="fragment" data-fragment-index="0">Sirve de repositorio de imágenes</li>
+              <li class="fragment" data-fragment-index="1">Registry oficial: <a href="https://registry.hub.docker.com/">registry.hub.docker.com</a></li>
+              <li class="fragment" data-fragment-index="2"><a href="https://registry.hub.docker.com/_/registry/">Docker</a> del docker registry</li>
+            </ul>
+          </div>
+        </section>
 
-				<section>
-					<h1>docker - -help</h1>
-					<p>
-						<img src="media/imgs/docker-commands.png">
-					</p>	
-				</section>
+        <section>
+          <h1>docker - -help</h1>
+          <p>
+            <img src="media/imgs/docker-commands.png">
+          </p>  
+        </section>
 
-				<section>
-					<h1>Mi primer container chispas!</h1>
-					<pre>
-						<code class="bash" data-trim>
+        <section>
+          <h1>Mi primer container chispas!</h1>
+          <pre>
+            <code class="bash" data-trim>
 # docker pull ubuntu
 # docker run -t -i ubuntu /bin/bash
 root@cb6005a9203c:/# apt-get update
@@ -300,14 +300,14 @@ root@cb6005a9203c:/# exit
 root@cb6005a9203c:/# exit
 # docker stop cb6005a9203c
 # docker rm cb6005a9203c
-						</code>
-					</pre>
-				</section>
+            </code>
+          </pre>
+        </section>
 
-				<section>
-					<h1>Mi primera imagen personalizada</h1>
-					<pre>
-						<code class="bash" data-trim>
+        <section>
+          <h1>Mi primera imagen personalizada</h1>
+          <pre>
+            <code class="bash" data-trim>
 # docker pull ubuntu
 # docker run -t -i ubuntu /bin/bash
 root@7affaf642c68:/# apt-get update
@@ -319,74 +319,74 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 rmajadas/vim        latest              b705060e08c0        12 seconds ago      252 MB
 ubuntu              latest              2d24f826cb16        12 days ago         188.3 MB
 
-						</code>
-					</pre>
-				</section>
+            </code>
+          </pre>
+        </section>
 
-				<section>
-					<h1>Mi primer Dockerfile</h1>
-					<pre>
-						<code class="nohighlight" data-trim>
+        <section>
+          <h1>Mi primer Dockerfile</h1>
+          <pre>
+            <code class="nohighlight" data-trim>
 FROM ubuntu:14.04
 MAINTAINER Roberto Majadas &lt;roberto.majadas@openshine.com&gt;
 RUN apt-get update && apt-get install -y ruby ruby-dev
 RUN gem install sinatra
-						</code>
-					</pre>
+            </code>
+          </pre>
 
-					<pre>
-						<code class="bash" data-trim>
+          <pre>
+            <code class="bash" data-trim>
 # docker build -t rmajadas/sinatra:v1 .
 # docker images
 # docker run -i -t rmajadas/sinatra:v1 /bin/bash
-						</code>
-					</pre>
-				</section>
+            </code>
+          </pre>
+        </section>
 
-				<section>
-					<h1>¿Qué se puede hacer en un Dockerfile?</h1>
-					<div style="position: absolute; left: 10%; top: 100px; width: 90%;" class="absolute-element">
-						<ul style="text-align: left; line-height=1.1em;">
-							<li class="fragment" data-fragment-index="0">Derivar de otras imágenes</li>
-							<li class="fragment" data-fragment-index="1">Ejecutar comandos</li>
-							<li class="fragment" data-fragment-index="2">Montar volúmenes para persistencia</li>
-							<li class="fragment" data-fragment-index="3">Exponer puertos</li>
-							<li class="fragment" data-fragment-index="4">Añadir ficheros al container</li>
-							<li class="fragment" data-fragment-index="5">Configurar el container</li>
-						</ul>
-					</div>
-				</section>
+        <section>
+          <h1>¿Qué se puede hacer en un Dockerfile?</h1>
+          <div style="position: absolute; left: 10%; top: 100px; width: 90%;" class="absolute-element">
+            <ul style="text-align: left; line-height=1.1em;">
+              <li class="fragment" data-fragment-index="0">Derivar de otras imágenes</li>
+              <li class="fragment" data-fragment-index="1">Ejecutar comandos</li>
+              <li class="fragment" data-fragment-index="2">Montar volúmenes para persistencia</li>
+              <li class="fragment" data-fragment-index="3">Exponer puertos</li>
+              <li class="fragment" data-fragment-index="4">Añadir ficheros al container</li>
+              <li class="fragment" data-fragment-index="5">Configurar el container</li>
+            </ul>
+          </div>
+        </section>
 
-				<section>
-					<h1>¿Montamos un wordpress?</h1>
-					<h2 class="fragment" data-fragment-index="0">Primero veamos el <a href="https://registry.hub.docker.com/_/wordpress/">wordpress del registry</a></h2>
-				</section>
+        <section>
+          <h1>¿Montamos un wordpress?</h1>
+          <h2 class="fragment" data-fragment-index="0">Primero veamos el <a href="https://registry.hub.docker.com/_/wordpress/">wordpress del registry</a></h2>
+        </section>
 
-				<section>
-					<h1>Marchando un docker de wordpress!!</h1>
-					<pre><code class="bash" data-trim>
+        <section>
+          <h1>Marchando un docker de wordpress!!</h1>
+          <pre><code class="bash" data-trim>
 # docker pull wordpress
 # docker pull mysql
 # docker run --name wp-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql
 # docker run --name my-wordpress --link wp-mysql:mysql -p 8080:80 -d wordpress
 # chromium http://your.ip.address:8080
-					</code></pre>
-				</section>
+          </code></pre>
+        </section>
 
-				<section>
-					<h1>Docker Compose</h1>
-					<div style="position: absolute; left: 10%; top: 100px; width: 90%;" class="absolute-element">
-						<ul style="text-align: left; line-height=1.1em;">
-							<li class="fragment" data-fragment-index="0">Herramienta nueva, requiere <a href="https://docs.docker.com/compose/install/">instalación</a></li>
-							<li class="fragment" data-fragment-index="1">Sirve para componer varias imagenes, como hicimos con wordpress</li>
-							<li class="fragment" data-fragment-index="2">Simplifica mucho la gestión de imagenes con varios componentes</li>
-						</ul>
-					</div>
-				</section>
+        <section>
+          <h1>Docker Compose</h1>
+          <div style="position: absolute; left: 10%; top: 100px; width: 90%;" class="absolute-element">
+            <ul style="text-align: left; line-height=1.1em;">
+              <li class="fragment" data-fragment-index="0">Herramienta nueva, requiere <a href="https://docs.docker.com/compose/install/">instalación</a></li>
+              <li class="fragment" data-fragment-index="1">Sirve para componer varias imagenes, como hicimos con wordpress</li>
+              <li class="fragment" data-fragment-index="2">Simplifica mucho la gestión de imagenes con varios componentes</li>
+            </ul>
+          </div>
+        </section>
 
-				<section>
-					<h1>Wordpress en docker-compose.yml</h1>
-					<pre><code class="nohighlight" data-trim>
+        <section>
+          <h1>Wordpress en docker-compose.yml</h1>
+          <pre><code class="nohighlight" data-trim>
 ComposeWP:
   image: wordpress
   ports:
@@ -398,72 +398,72 @@ ComposeMysql:
   image: mysql
   environment:
     MYSQL_ROOT_PASSWORD: mysecretpassword
-					</code></pre>
-					<pre><code class="bash" data-trim>
+          </code></pre>
+          <pre><code class="bash" data-trim>
 # docker-compose up -d
 # docker-compose ps
 # docker-compose stop
-					</code></pre>
-				</section>
+          </code></pre>
+        </section>
 
-				<section>
-					<h1>¿Preguntas?</h1>
-				</section>
+        <section>
+          <h1>¿Preguntas?</h1>
+        </section>
 
-				<section>
-					<h1>Gracias!<h1>
-					<div>
-						<img src="media/imgs/docker.png" style="width: 432px; height: 376px; max-height: none; max-width: none;"/>
-						<br/>
-					</div>
-					<h3>Puedes consultar la presentación en esta URL</h3>
-					<p>
-						<a href="http://telemaco.github.io/docker-intro/">http://telemaco.github.io/docker-intro</a>
-					</p>
-					<a href="http://www.openshine.com"><img src="media/imgs/openshine.png"/></a>
-				</section>
+        <section>
+          <h1>Gracias!<h1>
+          <div>
+            <img src="media/imgs/docker.png" style="width: 432px; height: 376px; max-height: none; max-width: none;"/>
+            <br/>
+          </div>
+          <h3>Puedes consultar la presentación en esta URL</h3>
+          <p>
+            <a href="http://telemaco.github.io/docker-intro/">http://telemaco.github.io/docker-intro</a>
+          </p>
+          <a href="http://www.openshine.com"><img src="media/imgs/openshine.png"/></a>
+        </section>
 
-				<section>
-					<h1>Enlaces</h1>
-					<div style="position: absolute; left: 10%; top: 100px; width: 90%;" class="absolute-element">
-						<ul style="text-align: left; line-height=1.1em;">
-							<li>Web de <a href="https://www.docker.com/">docker</a></li>
-							<li><a href="https://docs.docker.com/">Documentación</a> docker</li>
-							<li><a href="https://registry.hub.docker.com/">Docker Registry</a></li>
-							<li><a href="http://www.openshine.com">Openshine</a></li>
-						</ul>
-					</div>
-				</section>
-			</div>
-		</div>
+        <section>
+          <h1>Enlaces</h1>
+          <div style="position: absolute; left: 10%; top: 100px; width: 90%;" class="absolute-element">
+            <ul style="text-align: left; line-height=1.1em;">
+              <li>Web de <a href="https://www.docker.com/">docker</a></li>
+              <li><a href="https://docs.docker.com/">Documentación</a> docker</li>
+              <li><a href="https://registry.hub.docker.com/">Docker Registry</a></li>
+              <li><a href="http://www.openshine.com">Openshine</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-		<script>
+    <script>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
 
-		</script>
+    </script>
 
-	</body>
+  </body>
 </html>
