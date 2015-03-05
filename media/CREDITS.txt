@@ -15,6 +15,7 @@ media/imgs/openshine.png
 media/imgs/shipping-container-for-code.png
 media/imgs/the-challenge.png
 media/imgs/the-matrix-from-hell.png
-   Original: http://www.slideshare.net/dotCloud
+media/imgs/docker-filesystems-multilayer.png
+   Origin: http://www.slideshare.net/dotCloud
    Thanks: Docker Inc.
 

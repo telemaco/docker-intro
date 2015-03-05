@@ -59,7 +59,7 @@
 				</section>
 
 				<section data-background="media/imgs/containers.jpg">
-					<h1>¿Qué es un container?</h1>
+					<h1>¿Qué es un contenedor?</h1>
 				</section>
 
 				<section>
@@ -68,7 +68,7 @@
 					<div style="position: absolute; left: 10%; top: 150px; width: 90%;" class="absolute-element">
 						<ul style="text-align: left; line-height=1.1em;">
 							<li class="fragment" data-fragment-index="1">El comando chroot</li>
-							<li class="fragment" data-fragment-index="2">Virtualización con qemu, vmware, virtualbox, KVM</li>
+							<li class="fragment" data-fragment-index="2">Virtualización con qemu, vmware, virtualbox, Xen, KVM</li>
 							<li class="fragment" data-fragment-index="3">Clouds everywhere</li>
 							<li class="fragment" data-fragment-index="4">Containerización</li>
 						</ul>
@@ -115,7 +115,7 @@
 				</section>
 
 				<section>
-					<h1>Docker es un sistema de containers para software</h1>
+					<h1>Docker es un sistema de contenedores para software</h1>
 					<p>
 						<img src="media/imgs/shipping-container-for-code.png">
 					</p>
@@ -211,6 +211,229 @@
 					</p>
 				</section>
 
+				<section>
+					<h1>Instalación de docker</h1>
+					<div style="position: absolute; left: 1%; top: 100px; width: 48%;" class="absolute-element">
+						<ul style="text-align: left; line-height=1.1em;">
+							<li class="fragment" data-fragment-index="0"><b>GNU/Linux</b></li>
+							<ul style="font-size: 24px;" class="fragment" data-fragment-index="0">
+								<li>
+									<a href="https://docs.docker.com/installation/debian/">Debian</a>, <a href="https://docs.docker.com/installation/ubuntulinux/">Ubuntu</a>, <a href="https://docs.docker.com/installation/fedora/">Fedora</a>, <a href="https://docs.docker.com/installation/SUSE/">SUSE</a>, <a href="https://docs.docker.com/installation/archlinux/">ArchLinux</a> y <a href="https://docs.docker.com/installation/">demás</a>...
+								</li>
+								<li>Requiere un kernel > 3.13 </li>
+							</ul>
+						</ul>
+					</div>
+					<div style="position: absolute; left: 52%; top: 100px; width: 48%;" class="absolute-element">
+						<ul style="text-align: left; line-height=1.1em;">
+							<li class="fragment" data-fragment-index="1"><b>Windows y MacOSX</b></li>
+							<ul style="font-size: 24px;" class="fragment" data-fragment-index="1">
+								<li>No funciona nativamente</li>
+								<li><a href="http://boot2docker.io/">Boot2docker</a></li>
+							</ul>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h1>Imágenes, capas y containers</h1>
+					<p>
+						<img src="media/imgs/docker-filesystems-multilayer.png">
+					</p>	
+				</section>
+
+				<section>
+					<h1>Una vez instalado tenemos...</h1>
+					<div class="fragment" data-fragment-index="0" style="position: absolute; left: 1%; top: 100px; width: 48%;" class="absolute-element">
+						<ul style="text-align: left; line-height=1.1em;">
+							<li><b>Docker daemon</b></li>
+							<ul style="font-size: 24px;">
+								<li>Es un servicio del sistema</li>
+								<li>Controla del ciclo de vida de los contenedores</li>
+							</ul>
+						</ul>
+					</div>
+					<div class="fragment" data-fragment-index="1" style="position: absolute; left: 52%; top: 100px; width: 48%;" class="absolute-element">
+						<ul style="text-align: left; line-height=1.1em;">
+							<li ><b>Docker CLI</b></li>
+							<ul style="font-size: 24px;">
+								<li>Herramienta de usuario</li>
+								<li>Creación, destrucción, publicación y descarga de imagenes</li>
+								<li>Gestión de contendedores</li>
+							</ul>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h1>Docker registry</h1>
+					<div style="position: absolute; left: 10%; top: 100px; width: 90%;" class="absolute-element">
+						<ul style="text-align: left; line-height=1.1em;">
+							<li class="fragment" data-fragment-index="0">Sirve de repositorio de imágenes</li>
+							<li class="fragment" data-fragment-index="1">Registry oficial: <a href="https://registry.hub.docker.com/">registry.hub.docker.com</a></li>
+							<li class="fragment" data-fragment-index="2"><a href="https://registry.hub.docker.com/_/registry/">Docker</a> del docker registry</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h1>docker - -help</h1>
+					<p>
+						<img src="media/imgs/docker-commands.png">
+					</p>	
+				</section>
+
+				<section>
+					<h1>Mi primer container chispas!</h1>
+					<pre>
+						<code class="bash" data-trim>
+# docker pull ubuntu
+# docker run -t -i ubuntu /bin/bash
+root@cb6005a9203c:/# apt-get update
+root@cb6005a9203c:/# apt-get install vim
+root@cb6005a9203c:/# exit
+# docker ps
+# docker ps -a
+# docker start cb6005a9203c
+# docker ps
+# docker exec cb6005a9203c -i -t /bin/bash
+root@cb6005a9203c:/# exit
+# docker stop cb6005a9203c
+# docker rm cb6005a9203c
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h1>Mi primera imagen personalizada</h1>
+					<pre>
+						<code class="bash" data-trim>
+# docker pull ubuntu
+# docker run -t -i ubuntu /bin/bash
+root@7affaf642c68:/# apt-get update
+root@7affaf642c68:/# apt-get install vim
+root@7affaf642c68:/# exit
+docker commit -m "Add vim" -a "Roberto" 7affaf642c68 rmajadas/vim
+# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+rmajadas/vim        latest              b705060e08c0        12 seconds ago      252 MB
+ubuntu              latest              2d24f826cb16        12 days ago         188.3 MB
+
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h1>Mi primer Dockerfile</h1>
+					<pre>
+						<code class="nohighlight" data-trim>
+FROM ubuntu:14.04
+MAINTAINER Roberto Majadas &lt;roberto.majadas@openshine.com&gt;
+RUN apt-get update && apt-get install -y ruby ruby-dev
+RUN gem install sinatra
+						</code>
+					</pre>
+
+					<pre>
+						<code class="bash" data-trim>
+# docker build -t rmajadas/sinatra:v1 .
+# docker images
+# docker run -i -t rmajadas/sinatra:v1 /bin/bash
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h1>¿Qué se puede hacer en un Dockerfile?</h1>
+					<div style="position: absolute; left: 10%; top: 100px; width: 90%;" class="absolute-element">
+						<ul style="text-align: left; line-height=1.1em;">
+							<li class="fragment" data-fragment-index="0">Derivar de otras imágenes</li>
+							<li class="fragment" data-fragment-index="1">Ejecutar comandos</li>
+							<li class="fragment" data-fragment-index="2">Montar volumenes para persistencia</li>
+							<li class="fragment" data-fragment-index="3">Exponer puertos</li>
+							<li class="fragment" data-fragment-index="4">Añadir ficheros al container</li>
+							<li class="fragment" data-fragment-index="5">Configurar el container</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h1>¿Montamos un wordpress?</h1>
+					<h2 class="fragment" data-fragment-index="0">Primero veamos el <a href="https://registry.hub.docker.com/_/wordpress/">wordpress del registry</a></h2>
+				</section>
+
+				<section>
+					<h1>Marchando un docker de wordpress!!</h1>
+					<pre><code class="bash" data-trim>
+# docker pull wordpress
+# docker pull mysql
+# docker run --name wp-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql
+# docker run --name my-wordpress --link wp-mysql:mysql -p 8080:80 -d wordpress
+# chromium http://your.ip.address:8080
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>Docker Compose</h1>
+					<div style="position: absolute; left: 10%; top: 100px; width: 90%;" class="absolute-element">
+						<ul style="text-align: left; line-height=1.1em;">
+							<li class="fragment" data-fragment-index="0">Herramienta nueva, requiere <a href="https://docs.docker.com/compose/install/">instalación</a></li>
+							<li class="fragment" data-fragment-index="1">Sirve para componer varias imagenes, como hicimos con wordpress</li>
+							<li class="fragment" data-fragment-index="2">Simplica mucho la gestión de imagenes con varios componentes</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h1>Wordpress en docker-compose.yml</h1>
+					<pre><code class="nohighlight" data-trim>
+ComposeWP:
+  image: wordpress
+  ports:
+   - "8081:80"
+  links:
+   - ComposeMysql:mysql
+
+ComposeMysql:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: mysecretpassword
+					</code></pre>
+					<pre><code class="bash" data-trim>
+# docker-compose up -d
+# docker-compose ps
+# docker-compose stop
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>¿Preguntas?</h1>
+				</section>
+
+				<section>
+					<h1>Gracias!<h1>
+					<div>
+						<img src="media/imgs/docker.png" style="width: 432px; height: 376px; max-height: none; max-width: none;"/>
+						<br/>
+					</div>
+					<h3>Puedes consultar la presentación en esta URL</h3>
+					<p>
+						<a href="http://telemaco.github.io/docker-intro/">http://telemaco.github.io/docker-intro</a>
+					</p>
+					<a href="http://www.openshine.com"><img src="media/imgs/openshine.png"/></a>
+				</section>
+
+				<section>
+					<h1>Enlaces</h1>
+					<div style="position: absolute; left: 10%; top: 100px; width: 90%;" class="absolute-element">
+						<ul style="text-align: left; line-height=1.1em;">
+							<li>Web de <a href="https://www.docker.com/">docker</a></li>
+							<li><a href="https://docs.docker.com/">Documentación</a> docker</li>
+							<li><a href="https://registry.hub.docker.com/">Docker Registry</a></li>
+							<li><a href="http://www.openshine.com">Openshine</a></li>
+						</ul>
+					</div>
+				</section>
 			</div>
 		</div>
 
