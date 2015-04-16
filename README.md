@@ -1,3 +1,3 @@
 # docker-intro
 
-### Site: https://github.com/telemaco/docker-intro
+### Site: http://telemaco.github.io/docker-intro/
